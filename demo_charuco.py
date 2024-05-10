@@ -14,7 +14,7 @@ while True:
     if ret:
         charucoCorners, charucoIds, markerCorners, markerIds = bd.detect(frame)
         pose = None
-        if charucoIds is not None and charucoIds.shape[0] > 4:
+        if charucoIds is not None and charucoIds.shape[0] > 6:
             pose = bd.pose_estimate(
                 charucoCorners, charucoIds, intrinscis, distortion)
         frame = bd.draw(frame, charucoCorners, charucoIds,
